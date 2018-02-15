@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactInfo from './ContactInfo';
 import ContactDetails from './ContactDetails';
+import update from 'react-addons-update'; //이 라이브러리를 사용하여 배열을 변경할 수 있다.
 
 export default class Contact extends React.Component {
 
