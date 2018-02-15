@@ -27,6 +27,10 @@ export default class Contact extends React.Component {
 
         this.handleChange = this.handleChange.bind(this); //임의메소드를 만들 때는, this가 뭔지 알려주기 위해서 binding
         this.handleClick = this.handleClick.bind(this);
+
+        this.handleCreate = this.handleCreate.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
     //handleChange 메소드를 생성하여 keyword에 접근 및 수정
@@ -42,6 +46,34 @@ export default class Contact extends React.Component {
       });
 
       console.log(key, 'is selected');
+    }
+
+    handleCreate(contact) {
+      this.setState({
+        contactData: update(this.state.contactData, { $push: [contact] })
+      });
+    }
+
+    handleRemove() {
+      this.setState({
+        contactData: update(this.state.contactData,
+          { $splice: [[this.state.selectedKey, 1]] }
+        ),
+        selectedKey: -1
+      });
+    }
+
+    handleEdit(name, phone) {
+      this.setState({
+        contactData: update(this.state.contactData,
+          {
+            [this.state.selectedKey]: {
+              name: { $set: name },
+              phone: { $set: phone }
+            }
+          }
+        )
+      });
     }
 
     render() {
