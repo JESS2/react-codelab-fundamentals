@@ -48,12 +48,14 @@ export default class Contact extends React.Component {
       console.log(key, 'is selected');
     }
 
+    //전화번호부 추가 메소드
     handleCreate(contact) {
       this.setState({
         contactData: update(this.state.contactData, { $push: [contact] })
       });
     }
 
+    //제거 메소드
     handleRemove() {
       this.setState({
         contactData: update(this.state.contactData,
@@ -63,6 +65,7 @@ export default class Contact extends React.Component {
       });
     }
 
+    //수정 메소드
     handleEdit(name, phone) {
       this.setState({
         contactData: update(this.state.contactData,
