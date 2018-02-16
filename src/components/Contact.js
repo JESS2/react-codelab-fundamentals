@@ -58,6 +58,10 @@ export default class Contact extends React.Component {
 
     //제거 메소드
     handleRemove() {
+      //아무것도 선택하지 않았을 때는 함수 종료.
+      if(this.state.selectedKey < 0) {
+        return;
+      }
       this.setState({
         contactData: update(this.state.contactData,
           { $splice: [[this.state.selectedKey, 1]] }
