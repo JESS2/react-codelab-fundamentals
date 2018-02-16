@@ -2,6 +2,7 @@ import React from 'react';
 import ContactInfo from './ContactInfo';
 import ContactDetails from './ContactDetails';
 import update from 'react-addons-update'; //이 라이브러리를 사용하여 배열을 변경할 수 있다.
+import ContactCreate from './ContactCreate';
 
 export default class Contact extends React.Component {
 
@@ -108,7 +109,11 @@ export default class Contact extends React.Component {
                 <div>{mapToComponents(this.state.contactData)}</div>
                 <ContactDetails
                   isSelected={this.state.selectedKey != -1}
-                  contact={this.state.contactData[this.state.selectedKey]}/>
+                  contact={this.state.contactData[this.state.selectedKey]}
+                />
+                <ContactCreate
+                  onCreate={this.handleCreate}
+                />
             </div>
         );
     }
