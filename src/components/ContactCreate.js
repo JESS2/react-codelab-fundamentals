@@ -12,12 +12,14 @@ export default class ContactCreate extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  //input 값에 변화가 있을 경우 메소드 실행
   handleChange(e) {
     let nextState = {};
     nextState[e.target.name] = e.target.value;
     this.setState(nextState)
   }
 
+  //Create 버튼 클릭시 메소드 실행
   handleClick() {
     const contact = {
       name: this.state.name,
