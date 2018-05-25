@@ -1,25 +1,16 @@
-# CodeLab-React-Fundamentals
+# React-Contact-Project
 
 ## About
+
+React로 전화번호부 추가/수정/삭제 기능 구현
+[Velopert님의 인프런 강의](https://www.inflearn.com/course-status-2/) 중 Contact 프로젝트
+
+## 환경
 
 React 기본 작업 환경
 - babel 을 통한 ES6 변환
 - webpack-dev-server 사용
 - react-hot-loader 를 통한 Hot Module Reload 사용
-
-React CodeLab 에서 작업환경 설정을 할 때 사용 된 코드 입니다.
-
-
-## 설치하기
-
-```sh
-git clone https://github.com/velopert/react-codelab-fundamentals.git
-npm install -g webpack webpack-dev-server
-npm install
-# npm install 과정이 오래 걸린다면, 다음과 같이 node_modules.zip 을 다운로드 받아서 압축을 해제하세요:
-wget https://github.com/velopert/react-codelab-fundamentals/releases/download/1.0/node_modules.zip
-unzip node_modules.zip -d node_modules
-```
 
 ## 실행하기
 
